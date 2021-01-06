@@ -6,6 +6,10 @@ In CycleGAN, the object is to learn to mappings G: X -> Y, F: Y -> X, as well as
 
 ![simple model](./img/model_simple.jpg)
 
-In Recursive CycleGAN, we keep the same setting but make an input image go through the described cycle for multiple rounds instead of just one. We calculated adversarial losses, cycle consistency loss and identity loss in every cycle and add them together (weighted sum) as the final loss.
+In Recursive CycleGAN, we keep the same setting but make an input image go through the described cycle for multiple rounds instead of just one. 
 
 ![model](./img/model.jpg)
+
+During each cycle, we calculated adversarial losses, cycle consistency loss and identity loss the same way as in CycleGAN. Then we add them together (weighted sum) as the final loss. If L_i denotes the cycle consistency loss, for example, at the ith cycle. Then the total cycle consistency loss is calculated as the following:
+
+![loss](./img/loss.jpg)
